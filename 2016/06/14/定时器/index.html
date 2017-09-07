@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>定时器 | 发动机的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="定时器和线程是如何工作的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="定时器">
+<meta property="og:url" content="http://yoursite.com/2016/06/14/定时器/index.html">
+<meta property="og:site_name" content="发动机的博客">
+<meta property="og:description" content="定时器和线程是如何工作的">
+<meta property="og:updated_time" content="2016-06-15T11:08:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="定时器">
+<meta name="twitter:description" content="定时器和线程是如何工作的">
+  
+    <link rel="alternative" href="/atom.xml" title="发动机的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.soideas.cn/uploads/allimg/111220/0J0114915-12.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">发动机</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/GodEngine" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/godengine" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="/godenginer@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/css/" style="font-size: 17.5px;">css</a> <a href="/tags/css3/" style="font-size: 20px;">css3</a> <a href="/tags/es6/" style="font-size: 12.5px;">es6</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/nieweidong/">东哥的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/Jiasm/">学霸的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我一个菜廖</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">发动机</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://www.soideas.cn/uploads/allimg/111220/0J0114915-12.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">发动机</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/GodEngine" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/godengine" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/godenginer@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-定时器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/14/定时器/" class="article-date">
+  	<time datetime="2016-06-14T10:54:58.000Z" itemprop="datePublished">2016-06-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      定时器
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/js/">javascript</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>定时器和线程是如何工作的<a id="more"></a>
+<ul>
+<li><a href="#setting-and-clearing">设定和清除定时器</a></li>
+<li><a href="#timer-thread">JavaScript中的线程</a></li>
+<li><a href="#timer-and-thread">定时器与线程的关系</a></li>
+<li><a href="#diffrences-between-timeout-and-interval">timeout 和 interval 的区别</a></li>
+</ul>
+</li>
+<li><a href="#dealing-with-expensive-processing">用定时器分解耗时的操作</a></li>
+<li><a href="#central-timer-control">核心定时器控件</a><h2 id="setting-and-clearing"><a href="#setting-and-clearing" class="headerlink" title="setting-and-clearing"></a>setting-and-clearing</h2>clearTimeout和clearInterval都可以清除两种定时器，不过最好各用个的</li>
+</ul>
+<h2 id="timer-thread"><a href="#timer-thread" class="headerlink" title="timer-thread"></a>timer-thread</h2><p>由于JavaScript单线程的特点，异步的事件(click、timer、xhr…)作为消息都被放入一个<strong>消息队列</strong>中，每个消息与一个方法相关（即<strong>回调函数</strong>）。消息队列一直处于等待通知的状态中（<strong>异步轮询</strong>），当JavaScript主线程空闲下来，即栈(stack)中为空时，主线程会向消息队列发出通知，然后消息队列会依次一个一个将消息队列中的事件按<strong>先进先出</strong>的原则(不同浏览器具体实现方式可能不同)取出来，与消息相关的方法被依次放入栈中执行。<br>消息在处理的过程中(即回调函数执行过程)是”Run-to-completion”的，即一股劲儿执行完毕不会被打断的，多线程的语言比如java可能会停止当前线程去开启其他线程，而JavaScript不会，所以导致如果你的消息处理时间过长，浏览器会阻塞，并提示script执行过久，所以最好把处理过长的消息拆开处理。<br>具体参考<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop" target="_blank" rel="external">MDN</a> and <a href="http://stackoverflow.com/questions/21607692/understanding-the-event-loop" target="_blank" rel="external">S.O.</a></p>
+<h2 id="timer-and-thread"><a href="#timer-and-thread" class="headerlink" title="timer and thread"></a>timer and thread</h2><ol>
+<li>定时器任务的执行时刻<strong>并不是</strong>定时器设定的延迟时间后的时刻，由于JavaScript <strong>单线程</strong>的特点，消息队列中的任务执行时刻是由何时放入以及队列当前前面的任务执行所花费的时间一同决定的。队列中前面的任务花费时间越长，该任务等待的时间越久。</li>
+</ol>
+<h2 id="diffrences-between-timeout-and-interval"><a href="#diffrences-between-timeout-and-interval" class="headerlink" title="diffrences between timeout and interval"></a>diffrences between timeout and interval</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">式1：</div><div class="line">setTimeout(function repeatMe() &#123;</div><div class="line">/* Some long block of code... */</div><div class="line">setTimeout(repeatMe, 10);</div><div class="line">&#125;, 10);</div><div class="line"></div><div class="line">式2：</div><div class="line">setInterval(function() &#123;</div><div class="line">/* Some long block of code... */</div><div class="line">&#125;, 10);</div></pre></td></tr></table></figure>
+<ol>
+<li><p>式1能保证方法的两次执行间隔<strong>至少</strong>为10，而式2无法保证，即setTimeout定时器能保证<strong>至少</strong>要等待的时间。式2中，假设该定时器的前一个任务实例执行过程中(此时队列里已经没有该任务实例了)，setInterval又放入队里一个任务实例，且中间没有其他任务，那么这两个任务间隔就为近乎0了。</p>
+</li>
+<li><p>setTimeout定时器会将一个消息任务在指定的时间后放入消息队列中；而setInterval定时器<strong>尝试</strong>在每隔指定的时间后向消息队列放入任务，但是为了保证消息队列中最多只有一个该任务(方法的实例)，如果setInterval在指定放入任务的时刻发现队列中已经存在了该任务，则会<strong>跳过</strong>该任务的放入。</p>
+<h2 id="dealing-with-expensive-processing"><a href="#dealing-with-expensive-processing" class="headerlink" title="dealing with expensive processing"></a>dealing with expensive processing</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">原code：</div><div class="line">var start = new Date().getTime()</div><div class="line">var tbody = document.getElementsByTagName(&quot;tbody&quot;)[0];</div><div class="line">for (var i = 0; i &lt; 20000; i++) &#123;</div><div class="line">    var tr = document.createElement(&quot;tr&quot;);</div><div class="line">    for (var t = 0; t &lt; 6; t++) &#123;</div><div class="line">        var td = document.createElement(&quot;td&quot;);</div><div class="line">        td.appendChild(document.createTextNode(i + &quot;,&quot; + t));</div><div class="line">        tr.appendChild(td);</div><div class="line">    &#125;</div><div class="line">tbody.appendChild(tr);</div><div class="line">&#125;</div><div class="line">var end = new Date().getTime();</div><div class="line"></div><div class="line">用定时器拆开执行：</div><div class="line">var start = new Date().getTime(),end;</div><div class="line">var rowCount = 20000;</div><div class="line">var divideInto = 4;</div><div class="line">var chunkSize = rowCount/divideInto;</div><div class="line">var iteration = 0;</div><div class="line">var table = document.getElementsByTagName(&quot;tbody&quot;)[0];</div><div class="line">setTimeout(function generateRows()&#123;</div><div class="line">	var base = (chunkSize) * iteration;</div><div class="line">	for (var i = 0; i &lt; chunkSize; i++) &#123;</div><div class="line">		var tr = document.createElement(&quot;tr&quot;);</div><div class="line">		for (var t = 0; t &lt; 6; t++) &#123;</div><div class="line">			var td = document.createElement(&quot;td&quot;);</div><div class="line">			td.appendChild(</div><div class="line">			document.createTextNode((i + base) + &quot;,&quot; + t +</div><div class="line">			&quot;,&quot; + iteration));</div><div class="line">			tr.appendChild(td);</div><div class="line">		&#125;</div><div class="line">		table.appendChild(tr);</div><div class="line">	&#125;</div><div class="line">	iteration++;</div><div class="line">	if (iteration &lt; divideInto)&#123;</div><div class="line">		setTimeout(generateRows,0);</div><div class="line">	&#125;else &#123;</div><div class="line">		end = new Date().getTime();</div><div class="line">		console.log(end-start);</div><div class="line">	&#125;</div><div class="line">&#125;,0);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>效果是显而易见的，原code体验是很糟糕的。Firefox下直接卡死，弹出”无响应”，运气好过一会儿会出现结果；IE暂时卡死，过了好久才反应过来；Google很强大，但是选项卡上的小圆圈一直转也是蛮烦人。</p>
+<p>用定时器把任务拆成4个小块儿的异步执行以后，执行时间上必然是增多了，并且是多次渲染页面。但是体验上至少缓和了许多，且不影响后面的同步代码的执行。</p>
+<h2 id="central-timer-control"><a href="#central-timer-control" class="headerlink" title="central timer control"></a>central timer control</h2><p>定时器的滥用，如在动画中使用过多的定时器等操作会引发GC(垃圾回收器)的频繁工作，而<a href="https://en.wikipedia.org/wiki/Garbage_collection_(computer_science" target="_blank" rel="external">GC工作</a>)是需要占用相当大比例的运行时间，所以会严重影响性能，所以我们需要一个定时器控制器，来实现页面只有一个定时器处理异步的任务，且可以暂停或启动，使操作变得灵活可靠。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">var timers = &#123;</div><div class="line">    timerID: 0,</div><div class="line">    timers: [],</div><div class="line">    add: function(fn) &#123;</div><div class="line">        this.timers.push(fn);</div><div class="line">    &#125;,</div><div class="line">    start: function() &#123;</div><div class="line">        if (this.timerID) return;</div><div class="line">        (function runNext() &#123;</div><div class="line">        if (timers.timers.length &gt; 0) &#123;</div><div class="line">            for (var i = 0; i &lt; timers.timers.length; i++) &#123;</div><div class="line">                if (timers.timers[i]() === false) &#123;</div><div class="line">                    timers.timers.splice(i,1);</div><div class="line">                    i--;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            timers.timerID = setTimeout(runNext, 0);</div><div class="line">        &#125;</div><div class="line">        &#125;)();</div><div class="line">    &#125;,</div><div class="line">    stop: function() &#123;</div><div class="line">        clearTimeout(this.timerID);</div><div class="line">        this.timerID = 0;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">以上的定时器可以添加多个任务，启动该定时器可以自动的分割任务，当然需要任务中通过返回不返回false进行判断，并将其放入消息队里里异步执行。</div><div class="line"></div><div class="line">任务何以通过返回false来从定时器的任务数组timers中把自己删除，当任务数组中没有任务是，定时器不在进行。且在必要时可以停止定时器的运行。</div><div class="line"></div><div class="line">以上用一个定时器实现了异步执行多个任务，避免过多的定时器引发GC频繁工作导致影响浏览器性能</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/28/ES6-解构赋值/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          es6之解构
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/13/RegExp/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">RegExp</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="定时器" data-title="定时器" data-url="http://yoursite.com/2016/06/14/定时器/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 发动机
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

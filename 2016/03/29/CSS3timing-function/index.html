@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>CSS3timing-function | 发动机的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="What the FUCK is animation-timing-function？animation-timing-function是css animation的一个属性，用来描述动画在一个keyframe周期内动画开始阶段和动画结束阶段速度变化的快慢程度（速度的变化率），值由一个或几个timing-function组成。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3timing-function">
+<meta property="og:url" content="http://yoursite.com/2016/03/29/CSS3timing-function/index.html">
+<meta property="og:site_name" content="发动机的博客">
+<meta property="og:description" content="What the FUCK is animation-timing-function？animation-timing-function是css animation的一个属性，用来描述动画在一个keyframe周期内动画开始阶段和动画结束阶段速度变化的快慢程度（速度的变化率），值由一个或几个timing-function组成。">
+<meta property="og:image" content="http://yoursite.com/images/bezier.png">
+<meta property="og:image" content="http://yoursite.com/images/linear.png">
+<meta property="og:updated_time" content="2016-03-29T07:11:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3timing-function">
+<meta name="twitter:description" content="What the FUCK is animation-timing-function？animation-timing-function是css animation的一个属性，用来描述动画在一个keyframe周期内动画开始阶段和动画结束阶段速度变化的快慢程度（速度的变化率），值由一个或几个timing-function组成。">
+<meta name="twitter:image" content="http://yoursite.com/images/bezier.png">
+  
+    <link rel="alternative" href="/atom.xml" title="发动机的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.soideas.cn/uploads/allimg/111220/0J0114915-12.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">发动机</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/GodEngine" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/godengine" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="/godenginer@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/css/" style="font-size: 17.5px;">css</a> <a href="/tags/css3/" style="font-size: 20px;">css3</a> <a href="/tags/es6/" style="font-size: 12.5px;">es6</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/nieweidong/">东哥的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/Jiasm/">学霸的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我一个菜廖</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">发动机</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://www.soideas.cn/uploads/allimg/111220/0J0114915-12.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">发动机</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/GodEngine" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/godengine" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/godenginer@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-CSS3timing-function" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/29/CSS3timing-function/" class="article-date">
+  	<time datetime="2016-03-29T07:05:14.000Z" itemprop="datePublished">2016-03-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3timing-function
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/css/">css</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="What-the-FUCK-is-animation-timing-function？"><a href="#What-the-FUCK-is-animation-timing-function？" class="headerlink" title="What the FUCK is animation-timing-function？"></a>What the FUCK is <strong>animation-timing-function</strong>？</h3><p>animation-timing-function是css animation的一个属性，用来描述动画在一个keyframe周期内<strong>动画开始阶段</strong>和<strong>动画结束阶段</strong>速度变化的快慢程度（速度的变化率），值由一个或几个timing-function组成。<br><a id="more"></a></p>
+<h3 id="timing-function"><a href="#timing-function" class="headerlink" title="timing-function"></a>timing-function</h3><p>timing-function有两种表示方法，先说第一种，核心的cubic-bezier(x1,y1,x2,y2)<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function#The_cubic-bezier%28%29_class_of_timing-functions" target="_blank" rel="external">贝塞尔函数</a>，</p>
+<p>请自行百度贝塞尔函数(sorry)。。。<br>(x1,y1)和(x2,y2)分别对应图中的P1和P2点，P0和P3对用动画的开始点和结束点。<br>移动P1点（x1，y1）时，曲线上P0点的弧度会发生变化，效果类似于Photoshop中钢笔工具画图工具，同理移动P2点(x2,y2)，曲线上P3点的弧度发生变化，这两点弧度的变化直接影响整个曲线的形状，请用Photoshop钢笔工具尝试或自行脑补。<br>曲线的弧度对应动画执行的变化程度，比如弧度大时，动画变化的就快，弧度小，动画变化的就慢（类似于高中物理加速度a的概念）。<br>而cubic-bezier(x1,y1,x2,y2)中正是定义了P1，P2这两个点的位置，通过这两点的位置来确定整个运动曲线的弧度，就是动画的变化的快慢。</p>
+<h3 id="对应图："><a href="#对应图：" class="headerlink" title="对应图："></a>对应图：</h3><p><img src="/images/bezier.png" alt="贝塞尔函数"></p>
+<p>比如我们想做一个小球类似左右撞击的往返动画，那么要求小球在最左和最右有一个<strong>弹</strong>的效果，其实就是要求在动画开始时和结束时小球的运动曲线（弧度）变大，如何变大，当然不只是多喝木瓜汤。拿开始时刻说，当P1的位置越靠近左上方，P0处弧度越大，拿结束时刻说，P2越靠近右下方，P3处弧度越大。即动画的开始和结束处小球速度变化快，有了弹的效果。</p>
+<h3 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h3><p>由上图可知，X轴(横轴)没有赋值，且最大值为1，所以cubic-bezier()函数中的x1,x2取值区间为[0,1],而Y轴(纵轴)是没有[0,1]限制的，故y1,y2无限制。<br>当y1,y2超出[0,1]范围时，可产生bouncing effects.就是弹一下返回一小段然后再继续执行的效果，上码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">div &#123;</div><div class="line">animation-timing-function: cubic-bezier(0.1, 1.3, 1, -0.3); //看这儿的y1和y2</div><div class="line">    animation-direction: alternate;</div><div class="line">    animation-duration: 3s;</div><div class="line">    animation-fill-mode: none;</div><div class="line">    animation-iteration-count: infinite;</div><div class="line">    animation-name: anim;</div><div class="line">    animation-play-state: running;</div><div class="line">    border: 1px solid red;</div><div class="line">    height: 80px;</div><div class="line">    position: relative;</div><div class="line">    width: 80px;</div><div class="line">    border-radius: 50%;</div><div class="line">&#125;</div><div class="line">@keyframes anim &#123;</div><div class="line">0% &#123;</div><div class="line">    left: 0;</div><div class="line">    top: 0;</div><div class="line">&#125;</div><div class="line">100% &#123;</div><div class="line">    left: 550px;</div><div class="line">    top: 0;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="第二种是关键字表示，就是指定值的cubic-bezier-函数简写"><a href="#第二种是关键字表示，就是指定值的cubic-bezier-函数简写" class="headerlink" title="第二种是关键字表示，就是指定值的cubic-bezier()函数简写:"></a>第二种是<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function#Keywords_for_common_timing-functions" target="_blank" rel="external">关键字</a>表示，就是指定值的cubic-bezier()函数简写:</h3><h5 id="linear-cubic-bezier-0-0-0-0-1-0-1-0-，匀速运动（高中物理既视感）"><a href="#linear-cubic-bezier-0-0-0-0-1-0-1-0-，匀速运动（高中物理既视感）" class="headerlink" title="linear == cubic-bezier(0.0, 0.0, 1.0, 1.0)，匀速运动（高中物理既视感）:"></a>linear == cubic-bezier(0.0, 0.0, 1.0, 1.0)，匀速运动（高中物理既视感）:</h5><p><img src="/images/linear.png" alt="贝塞尔函数"></p>
+<p>其余的关键字为了不占用过多github空间，请自行<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function#Keywords_for_common_timing-functions" target="_blank" rel="external">MDN</a></p>
+<p>从<a href="http://jiasm.github.io/" target="_blank" rel="external">某霸</a>博客上偷了个不错的现成<a href="http://easings.net/zh-cn" target="_blank" rel="external">bezier函数</a>,屌屌的。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/05/CSS3transition/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          CSS3transition
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/25/CSS3动画/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS3动画</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="CSS3timing-function" data-title="CSS3timing-function" data-url="http://yoursite.com/2016/03/29/CSS3timing-function/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 发动机
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

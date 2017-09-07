@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>canvas(一) | 发动机的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="注意事项">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas(一)">
+<meta property="og:url" content="http://yoursite.com/2016/07/08/canvas一/index.html">
+<meta property="og:site_name" content="发动机的博客">
+<meta property="og:description" content="注意事项">
+<meta property="og:image" content="http://yoursite.com/images/fillRules.png">
+<meta property="og:updated_time" content="2016-07-11T09:03:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas(一)">
+<meta name="twitter:description" content="注意事项">
+<meta name="twitter:image" content="http://yoursite.com/images/fillRules.png">
+  
+    <link rel="alternative" href="/atom.xml" title="发动机的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.soideas.cn/uploads/allimg/111220/0J0114915-12.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">发动机</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/GodEngine" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/godengine" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="/godenginer@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/css/" style="font-size: 17.5px;">css</a> <a href="/tags/css3/" style="font-size: 20px;">css3</a> <a href="/tags/es6/" style="font-size: 12.5px;">es6</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/nieweidong/">东哥的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/Jiasm/">学霸的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我一个菜廖</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">发动机</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://www.soideas.cn/uploads/allimg/111220/0J0114915-12.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">发动机</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/GodEngine" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/godengine" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/godenginer@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-canvas一" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/08/canvas一/" class="article-date">
+  	<time datetime="2016-07-08T11:06:06.000Z" itemprop="datePublished">2016-07-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      canvas(一)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>注意事项<a id="more"></a></li>
+<li><a href="#Drawing-shapes">用canvas画图</a><ul>
+<li><a href="#绘制矩形">绘制矩形</a></li>
+<li><a href="#绘制路径">绘制路径</a></li>
+<li><a href="#Path2D">Path2D</a></li>
+</ul>
+</li>
+<li><a href="#Applying-styles-and-colors">应用颜色和样式</a><ul>
+<li><a href="">fillStyle 和 strokeStyle</a></li>
+<li><a href="Transparency">设置全局的透明度</a></li>
+<li><a href="#line-styles">笔画的样式</a></li>
+<li><a href="#Gradients">渐变</a></li>
+<li><a href="#Patterns">图案</a></li>
+<li><a href="#shadow">阴影</a></li>
+<li><a href="#fill-rules">canvas填充规则</a></li>
+</ul>
+</li>
+<li><a href="#drawing-text">绘制文本</a><ul>
+<li><a href="#Styling-text">文本样式</a></li>
+<li><a href="#measureText">文本信息</a><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3></li>
+</ul>
+</li>
+<li>当未在canvas标签的attribute上指定width和height时，canvas默认宽高为300*150 px,且此时如果css对canvas设置的样式不符合canvas默认的宽高比例(2:1)时，图像会变形，除非在attribute上显示指定宽高，不宜用css指定;</li>
+<li>canvas元素的样式不会影响实际画布上的图像，无样式设置时canvas是transparent的;</li>
+<li>在canvas内部的内容，可作为不支持canvas时显示的内容，支持的canvas的浏览器会忽略内部的内容;</li>
+<li>闭合标签是必须的，如果遗漏，文档的剩余部分在支持canvas的浏览器中将会当做fallback content后备内容，而不被显示;</li>
+</ul>
+<h2 id="Drawing-shapes"><a href="#Drawing-shapes" class="headerlink" title="###　Drawing shapes"></a>###　Drawing shapes</h2><p>在获取node后调用node.getContext(2d),可以获取到<a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D" target="_blank" rel="external">CanvasRenderingContext2D</a>O,并对其进行操作,canvas只有两种原始类型的形状,矩形和路径：</p>
+<h3 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h3><ul>
+<li>O.fillRect(x,y,width,height)： 默认为黑色的矩形</li>
+<li>O.strokeRect(x,y,width,height)： 默认为灰色边框的矩形</li>
+<li>O.clearRect(x,y,width,height)： 产生一个默认颜色为白色不透明的矩形</li>
+</ul>
+<h3 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h3><p>创建路径一般分为以下几个步骤:</p>
+<ol>
+<li>O.beginPath()： 创建一个path</li>
+<li>O.moveTo()： 将画笔移动到某一起点</li>
+<li>path methods： 调用各种路径API进行绘制</li>
+<li>O.closePath()： 闭合路径,调用fill()填充时，路径会自动闭合(stroke()是不行的)而无需调用该方法</li>
+<li>O.stroke() or O.fill()： 进行路径绘制或者实心的涂画</li>
+</ol>
+<h3 id="Path2D"><a href="#Path2D" class="headerlink" title="Path2D"></a>Path2D</h3><p>使用<a href="https://developer.mozilla.org/en-US/docs/Web/API/Path2D/Path2D#Using_SVG_paths" target="_blank" rel="external">Path2D Object</a>可以更清晰的使用画布的API，可以缓存画布里的路径对象重复使用并提高性能，而且可以配合svg进行绘画;</p>
+<h3 id="Applying-styles-and-colors"><a href="#Applying-styles-and-colors" class="headerlink" title="Applying styles and colors"></a>Applying styles and colors</h3><hr>
+<h3 id="fillStyle-and-strokeStyle"><a href="#fillStyle-and-strokeStyle" class="headerlink" title="fillStyle and strokeStyle"></a>fillStyle and strokeStyle</h3><p>O.fillStyle / O.strokeStyle = “colorValue”： 用来设置图像填充颜色和图像outline的颜色，默认值为black黑色,colorValue为合法的颜色值;</p>
+<h3 id="Transparency全局透明度"><a href="#Transparency全局透明度" class="headerlink" title="Transparency全局透明度"></a>Transparency全局透明度</h3><p>O.globalAlpha = 0.5：  设置以后所有的图像透明度均为0.5</p>
+<h3 id="line-styles"><a href="#line-styles" class="headerlink" title="line styles"></a>line styles</h3><ul>
+<li>O.lineWidth = value：设置线宽，负值，Infinity，NaN都会被忽略</li>
+<li>O.lineCap =”butt” / “round” / “square”： 设置线尾为 “方形” “圆形” “添加一截与线相同宽度，一半宽的长度的box” 样式</li>
+<li>O.lineJoin = “round” / “bevel” / “miter”： 设置两条片段(包括lines,arcs,curves)交汇处应该是 “弧线” “横切” “直角” 样式</li>
+<li>O.miterLimit = value： 麻蛋看不懂这个…</li>
+<li>O.setLineDash([虚线点宽,虚线点间隔])，O.getLineDash()：设置即返回虚线上点的宽度和点之间的间隔的宽度</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset" target="_blank" rel="external">O.lineDashOffset=value</a>,这个例子一看便知</li>
+</ul>
+<h3 id="Gradients"><a href="#Gradients" class="headerlink" title="Gradients"></a>Gradients</h3><p>渐变分为线性渐变和环形渐变，首先要创建相应的渐变对象</p>
+<ul>
+<li>var gradient = createLinearGradient(x1, y1, x2, y2)</li>
+</ul>
+<p>(x1,y1),(x2,y2)为渐变起止点，沿该两点方向进行渐变。note：只是在这两个点之间形成的矩形区域内是渐变的</p>
+<ul>
+<li>var gradient = createRadialGradient(x1, y1, r1, x2, y2, r2)</li>
+</ul>
+<p>(x1,y1,r1),(x2,y2,r2) 分别为环形渐变的内环和外环，三个值用来表示圆心和半径</p>
+<ul>
+<li>gradient.addColorStop(position, color)</li>
+</ul>
+<p>position是0~1之间的数，意味着从你绘制区域的百分比位置position开始，颜色为第二个参数color，且不参与渐变，即覆盖与之前渐变重叠的区域</p>
+<h3 id="Patterns"><a href="#Patterns" class="headerlink" title="Patterns"></a>Patterns</h3><p>var pattern = O.createPattern(image, type);O.fillStyle / O.strokeStyle= pattern:<br>用来创建一个图像对象，并按”type”(类似于background-repeat)进行重复平铺。”image”是<a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasImageSource" target="_blank" rel="external">CanvasImageSource</a>类型值，可以使image对象、video对象，等CanvasImageSource类型值。<br>用image对象作为image参数时，请确image已经加载完毕.<br>最后将值赋值给填充样式或者绘笔的样式</p>
+<h3 id="shadow"><a href="#shadow" class="headerlink" title="shadow"></a>shadow</h3><ul>
+<li>O.shadowOffsetX = float： 阴影在x轴的偏移</li>
+<li>O.shadowOffsetY = float： 阴影在Y轴的偏移</li>
+<li>O.shadowBlur = float：阴影的模糊度</li>
+<li>O.shadowColor = color： 阴影的颜色</li>
+</ul>
+<h3 id="fill-rules"><a href="#fill-rules" class="headerlink" title="fill rules"></a><a href="https://en.wikipedia.org/wiki/Nonzero-rule" target="_blank" rel="external">fill rules</a></h3><p>填充规则用来判断一个点是否属于一段闭合的曲线，如果属于，则是”inside”,即填充，如果不属于，则为”outside”,即不填充。<br><img src="/images/fillRules.png" alt="来自维基百科"></p>
+<ol>
+<li>“nonzero-rule” 非零规则(图B)：<br>以这个点为起点，向外发出一条射线，该射线被两段曲线分割，顺时针方向曲线-1，逆时针方向曲线+1(当然也可以认为顺时针+1，逆时针-1)，由于该射线被两条顺时针方向的曲线分割，和值不为0，故该点为”inside”。总结下，如果分割曲线线的顺逆方向的数量相同，则为”outside”,否则为”inside”;</li>
+<li>“even-odd rule” 奇偶规则(图A)：<br>以这个点为起点，向外发出一条射线，该射线被两段曲线分割，即被偶数个曲线分割，则为”outside”;如果被奇数个曲线分割，则为”inside”</li>
+</ol>
+<h3 id="drawing-text"><a href="#drawing-text" class="headerlink" title="drawing-text"></a>drawing-text</h3><hr>
+<ul>
+<li>O.font=”28px serif”;O.fillText(text,x,y[,maxWidth]);</li>
+<li><p>O.font=”28px serif”;O.strokeText(text,x,y[,maxWidth]);</p>
+<p>canvas rendering context提供了以上两个方法绘制文字，text文本/(x,y)坐标点/文本最大宽度。一个是实心的字体，一个是空心的字体。</p>
+<h3 id="Styling-text"><a href="#Styling-text" class="headerlink" title="Styling text"></a>Styling text</h3></li>
+<li>font=””： 使用css中font的属性值来设置字体，默认值为”10px sans-serif”;</li>
+<li>textAlign=””： 文本对齐方式，start / end / left / right / center. 默认值 start。</li>
+<li>textBaseline = “”： 基线设置，top / hanging / middle / alphabetic / ideographic / bottom。默认值为alphabetic</li>
+<li>direction = “”： 文本起始方向ltr, rtl, inherit</li>
+</ul>
+<h3 id="measureText"><a href="#measureText" class="headerlink" title="measureText"></a>measureText</h3><p>O.measureText()： 返回<a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/measureText" target="_blank" rel="external">TextMetrics</a>文本的宽度即一些其他信息，但是目前只支持width…</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/12/canvas二/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          canvas二
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/28/堆叠上下文/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">堆叠上下文</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="canvas一" data-title="canvas(一)" data-url="http://yoursite.com/2016/07/08/canvas一/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 发动机
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

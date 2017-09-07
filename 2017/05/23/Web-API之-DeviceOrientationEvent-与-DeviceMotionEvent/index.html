@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Web API之 DeviceOrientationEvent 与 DeviceMotionEvent | 发动机的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="w3c提供了关于提供主机设备物理方向的DOM事件标准。凡实现了该标准的User agent必须提供名为deviceorientation和devicemotion">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web API之 DeviceOrientationEvent 与 DeviceMotionEvent">
+<meta property="og:url" content="http://yoursite.com/2017/05/23/Web-API之-DeviceOrientationEvent-与-DeviceMotionEvent/index.html">
+<meta property="og:site_name" content="发动机的博客">
+<meta property="og:description" content="w3c提供了关于提供主机设备物理方向的DOM事件标准。凡实现了该标准的User agent必须提供名为deviceorientation和devicemotion">
+<meta property="og:updated_time" content="2017-05-23T08:48:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web API之 DeviceOrientationEvent 与 DeviceMotionEvent">
+<meta name="twitter:description" content="w3c提供了关于提供主机设备物理方向的DOM事件标准。凡实现了该标准的User agent必须提供名为deviceorientation和devicemotion">
+  
+    <link rel="alternative" href="/atom.xml" title="发动机的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.soideas.cn/uploads/allimg/111220/0J0114915-12.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">发动机</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/GodEngine" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/godengine" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="/godenginer@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/css/" style="font-size: 17.5px;">css</a> <a href="/tags/css3/" style="font-size: 20px;">css3</a> <a href="/tags/es6/" style="font-size: 12.5px;">es6</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/nieweidong/">东哥的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/Jiasm/">学霸的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我一个菜廖</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">发动机</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://www.soideas.cn/uploads/allimg/111220/0J0114915-12.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">发动机</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/GodEngine" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/godengine" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/godenginer@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Web-API之-DeviceOrientationEvent-与-DeviceMotionEvent" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/23/Web-API之-DeviceOrientationEvent-与-DeviceMotionEvent/" class="article-date">
+  	<time datetime="2017-05-23T08:40:44.000Z" itemprop="datePublished">2017-05-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Web API之 DeviceOrientationEvent 与 DeviceMotionEvent
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>w3c提供了关于提供主机设备物理方向的DOM事件标准。凡实现了该标准的User agent必须提供名为deviceorientation和devicemotion<br><a id="more"></a><br>Dom事件，且事件响应的类型为DeviceOrientationEvent和DeviceMotionEvent，且改两个事件必须在window Object上触发。</p>
+<h2 id="DeviceOrientationEvent"><a href="#DeviceOrientationEvent" class="headerlink" title="DeviceOrientationEvent"></a>DeviceOrientationEvent</h2><p>DeviceOrientationEvent提供与运行当前页面的设备有关的方向信息</p>
+<h3 id="DeviceOrientationEvent-主要属性"><a href="#DeviceOrientationEvent-主要属性" class="headerlink" title="DeviceOrientationEvent 主要属性"></a>DeviceOrientationEvent 主要属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>取值范围</th>
+<th>默认值</th>
+<th>趋势</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alpha</td>
+<td>0~360</td>
+<td>绕z轴转，屏幕长度方向距y轴的偏移角度</td>
+<td>360/0 附近</td>
+<td>顺时针至0，逆时针至360</td>
+</tr>
+<tr>
+<td>beta</td>
+<td>-180~0~180</td>
+<td>绕x轴转，屏幕垂直方向距z轴的偏移角度</td>
+<td>0附近</td>
+<td>顺时针至180，逆时针至-180</td>
+</tr>
+<tr>
+<td>gamma</td>
+<td>-90~0~90</td>
+<td>绕y轴转，屏幕宽度方向距x轴的偏移角度</td>
+<td>0附近</td>
+<td>顺时针至90，逆时针至-90</td>
+</tr>
+</tbody>
+</table>
+<h2 id="DeviceMotionEvent"><a href="#DeviceMotionEvent" class="headerlink" title="DeviceMotionEvent"></a>DeviceMotionEvent</h2><p>DeviceMotionEvent提供与当前设备位置和方向的速度变化先关的信息</p>
+<h3 id="DeviceMotionEvent-主要属性"><a href="#DeviceMotionEvent-主要属性" class="headerlink" title="DeviceMotionEvent 主要属性"></a>DeviceMotionEvent 主要属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>单位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>acceleration</td>
+<td>包含x,y,z方向上的加速度</td>
+<td>m/s^2</td>
+</tr>
+<tr>
+<td>accelerationIncludingGravity</td>
+<td>含x,y,z方向上的加速度且带地球重力加速度g的影响</td>
+<td>m/s^2</td>
+</tr>
+<tr>
+<td>rotationRate</td>
+<td>绕三个轴每秒的旋转速度</td>
+<td>unknow</td>
+</tr>
+</tbody>
+</table>
+<h2 id="引入方式"><a href="#引入方式" class="headerlink" title="引入方式"></a>引入方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">判断当前window对象是否有DeviceMotionEvent属性，有则监听devicemotion事件:</div><div class="line"></div><div class="line">if (window.DeviceMotionEvent) &#123;</div><div class="line">	window.addEventListener(&quot;devicemotion&quot;, motionHandler, false);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">判断当前window对象是否有DeviceOrientationEvent属性，有则监听deviceorientation事件:</div><div class="line"></div><div class="line">if (window.DeviceOrientationEvent) &#123;</div><div class="line">	window.addEventListener(&quot;deviceorientation&quot;, orientationHandler, false);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p>移动端支持大部分浏览器（不支持的为IE phone和Opera Mobild）</p>
+<h2 id="相关库-parallax-js"><a href="#相关库-parallax-js" class="headerlink" title="相关库 parallax.js"></a>相关库 <a href="https://github.com/wagerfield/parallax" target="_blank" rel="external">parallax.js</a></h2><p><a href="https://github.com/wagerfield/parallax" target="_blank" rel="external">parallax.js</a>为支持监听pc端鼠标hover移动事件或监听移动端重力感应事件的库，并对相关的层做视差位移的效果。</p>
+<h3 id="示例demo"><a href="#示例demo" class="headerlink" title="示例demo"></a>示例demo</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"scene"</span> <span class="attr">class</span>=<span class="string">"scene"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layer"</span> <span class="attr">data-depth</span>=<span class="string">"1.00"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./img/parallax/layer1.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layer"</span> <span class="attr">data-depth</span>=<span class="string">"0.80"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./img/parallax/layer2.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layer"</span> <span class="attr">data-depth</span>=<span class="string">"0.60"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./img/parallax/layer3.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layer"</span> <span class="attr">data-depth</span>=<span class="string">"0.40"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./img/parallax/layer4.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layer"</span> <span class="attr">data-depth</span>=<span class="string">"0.20"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./img/parallax/layer5.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layer"</span> <span class="attr">data-depth</span>=<span class="string">"0.00"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./img/parallax/layer6.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Parallax form <span class="string">'./parallax.js'</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> scene = <span class="built_in">document</span>.getElementById(<span class="string">'scene'</span>);</div><div class="line"><span class="keyword">var</span> parallax = <span class="keyword">new</span> Parallax(scene, &#123;</div><div class="line">  <span class="attr">relativeInput</span>: <span class="literal">true</span>,</div><div class="line">  <span class="attr">clipRelativeInput</span>: <span class="literal">false</span>,</div><div class="line">  <span class="attr">hoverOnly</span>: <span class="literal">true</span>,</div><div class="line">  <span class="attr">calibrateX</span>: <span class="literal">false</span>,</div><div class="line">  <span class="attr">calibrateY</span>: <span class="literal">true</span>,</div><div class="line">  <span class="attr">invertX</span>: <span class="literal">false</span>,</div><div class="line">  <span class="attr">invertY</span>: <span class="literal">true</span>,</div><div class="line">  <span class="attr">limitX</span>: <span class="literal">false</span>,</div><div class="line">  <span class="attr">limitY</span>: <span class="number">10</span>,</div><div class="line">  <span class="attr">scalarX</span>: <span class="number">2</span>,</div><div class="line">  <span class="attr">scalarY</span>: <span class="number">8</span>,</div><div class="line">  <span class="attr">frictionX</span>: <span class="number">0.2</span>,</div><div class="line">  <span class="attr">frictionY</span>: <span class="number">0.8</span>,</div><div class="line">  <span class="attr">originX</span>: <span class="number">0.0</span>,</div><div class="line">  <span class="attr">originY</span>: <span class="number">1.0</span>,</div><div class="line">  <span class="attr">precision</span>: <span class="number">1</span>,</div><div class="line">  <span class="attr">pointerEvents</span>: <span class="literal">false</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="parallax-js-API"><a href="#parallax-js-API" class="headerlink" title="parallax.js API"></a>parallax.js API</h3><table>
+<thead>
+<tr>
+<th>Behaviour</th>
+<th>Values</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>relativeInput</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td><code>false</code></td>
+<td>Specifies whether or not to use the coordinate system of the scene. <strong>Mouse input only.</strong></td>
+</tr>
+<tr>
+<td><code>clipRelativeInput</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td><code>false</code></td>
+<td>Specifies whether or not to clip the mouse input to the scene bounds. No effect in combination with <code>hoverOnly</code>. <strong>Mouse input only.</strong></td>
+</tr>
+<tr>
+<td><code>hoverOnly</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td><code>false</code></td>
+<td>Apply the parallax effect only while the cursor is over the scene. Best together with <code>relativeInput</code> set to true. <strong>Mouse input only.</strong></td>
+</tr>
+<tr>
+<td><code>calibrate-x</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td><code>false</code></td>
+<td>是否储存或者计算初始化的x / y 坐标值，默认false</td>
+</tr>
+<tr>
+<td><code>calibrate-y</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td><code>true</code></td>
+<td>是否储存或者计算初始化的x / y 坐标值，默认false</td>
+</tr>
+<tr>
+<td><code>invert-x</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td><code>true</code></td>
+<td>设置层相当于设备方向的移动方向，true为反向，false为正向，默认为true</td>
+</tr>
+<tr>
+<td><code>invert-y</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td><code>true</code></td>
+<td>设置层相当于设备方向的移动方向，true为反向，false为正向，默认为true</td>
+</tr>
+<tr>
+<td><code>limit-x</code></td>
+<td><code>number</code> or <code>false</code></td>
+<td><code>false</code></td>
+<td>number限制x轴的值或者false不限制</td>
+</tr>
+<tr>
+<td><code>limit-y</code></td>
+<td><code>number</code> or <code>false</code></td>
+<td><code>false</code></td>
+<td>number限制y轴的值或者false不限制</td>
+</tr>
+<tr>
+<td><code>scalar-x</code></td>
+<td><code>number</code></td>
+<td><code>10.0</code></td>
+<td>x，y方向的位移计算中的一个与灵敏度有关的乘积因子，默认10</td>
+</tr>
+<tr>
+<td><code>scalar-y</code></td>
+<td><code>number</code></td>
+<td><code>10.0</code></td>
+<td>x，y方向的位移计算中的一个与灵敏度有关的乘积因子，默认10</td>
+</tr>
+<tr>
+<td><code>friction-x</code></td>
+<td><code>number</code> <code>0 - 1</code></td>
+<td><code>0.1</code></td>
+<td>影响位移平滑度的一个参数，0~1之间，默认0.1</td>
+</tr>
+<tr>
+<td><code>friction-y</code></td>
+<td><code>number</code> <code>0 - 1</code></td>
+<td><code>0.1</code></td>
+<td>影响位移平滑度的一个参数，0~1之间，默认0.1</td>
+</tr>
+<tr>
+<td><code>origin-x</code></td>
+<td><code>number</code></td>
+<td><code>0.5</code></td>
+<td>x y轴方向上的初始化鼠标位置，默认0.5位于中间，0 位于左侧，1位于右侧</td>
+</tr>
+<tr>
+<td><code>origin-y</code></td>
+<td><code>number</code></td>
+<td><code>0.5</code></td>
+<td>x y轴方向上的初始化鼠标位置，默认0.5位于中间，0 位于左侧，1位于右侧</td>
+</tr>
+<tr>
+<td><code>precision</code></td>
+<td><code>integer</code></td>
+<td><code>1</code></td>
+<td>Decimals the element positions should be rounded to. Changing this value should not be necessary anytime soon.</td>
+</tr>
+<tr>
+<td><code>pointerEvents</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td><code>false</code></td>
+<td>设为false可以屏蔽一些点击事件，提高视差的性能，默认false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接:"></a>友情链接:</h3><p><a href="http://w3c.github.io/deviceorientation/spec-source-orientation.html#devicemotion" target="_blank" rel="external">w3c文档</a></p>
+<p><a href="https://www.html5rocks.com/en/tutorials/device/orientation/" target="_blank" rel="external">html5rocks orientation</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/20/inline-block元素间的间隙/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">inline-block元素间的间隙</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Web-API之-DeviceOrientationEvent-与-DeviceMotionEvent" data-title="Web API之 DeviceOrientationEvent 与 DeviceMotionEvent" data-url="http://yoursite.com/2017/05/23/Web-API之-DeviceOrientationEvent-与-DeviceMotionEvent/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 发动机
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

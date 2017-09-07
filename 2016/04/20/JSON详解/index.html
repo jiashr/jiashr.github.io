@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>JSON详解 | 发动机的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本文尝试详解下JSON对象的两个方法，以及JSON的一些基本的姿势。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSON详解">
+<meta property="og:url" content="http://yoursite.com/2016/04/20/JSON详解/index.html">
+<meta property="og:site_name" content="发动机的博客">
+<meta property="og:description" content="本文尝试详解下JSON对象的两个方法，以及JSON的一些基本的姿势。">
+<meta property="og:updated_time" content="2016-09-20T06:27:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSON详解">
+<meta name="twitter:description" content="本文尝试详解下JSON对象的两个方法，以及JSON的一些基本的姿势。">
+  
+    <link rel="alternative" href="/atom.xml" title="发动机的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.soideas.cn/uploads/allimg/111220/0J0114915-12.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">发动机</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/GodEngine" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/godengine" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="/godenginer@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/css/" style="font-size: 17.5px;">css</a> <a href="/tags/css3/" style="font-size: 20px;">css3</a> <a href="/tags/es6/" style="font-size: 12.5px;">es6</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/nieweidong/">东哥的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/Jiasm/">学霸的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我一个菜廖</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">发动机</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://www.soideas.cn/uploads/allimg/111220/0J0114915-12.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">发动机</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/GodEngine" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/godengine" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/godenginer@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-JSON详解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/20/JSON详解/" class="article-date">
+  	<time datetime="2016-04-20T10:48:52.000Z" itemprop="datePublished">2016-04-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JSON详解
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/js/">javascript</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文尝试详解下JSON对象的两个方法，以及JSON的一些基本的姿势。<br><a id="more"></a></p>
+<h3 id="JSON的数据结构"><a href="#JSON的数据结构" class="headerlink" title="JSON的数据结构"></a>JSON的数据结构</h3><hr>
+<ul>
+<li><strong>JSONObject</strong>:<br>  以”{“开始,”}”结束。每个”名称”后跟一个”:”（冒号）;”‘名称/值’ 对”之间使用”,”（逗号）分隔。 </li>
+<li><strong>JSONArray</strong>:<br>  以”[“（左中括号）开始，”]”（右中括号）结束。值(value)之间使用”,”（逗号）分隔。<br> 值(value)包括必须为<strong>双引号</strong>包含的string，number，boolean，null，object，array。</li>
+<li><strong>JSONString</strong>：<br>JSONString由双引号包裹，且不含 “、\、\ 、U+0000至U+001F十九个control字符、空白符、16进制Unicode符</li>
+<li><strong>JSONNumber</strong> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">SONNumber = - PositiveNumber</div><div class="line">          or PositiveNumber</div><div class="line">PositiveNumber = DecimalNumber</div><div class="line">              or DecimalNumber . Digits</div><div class="line">              or DecimalNumber . Digits ExponentPart</div><div class="line">              or DecimalNumber ExponentPart</div><div class="line">DecimalNumber = 0</div><div class="line">             or OneToNine Digits</div><div class="line">ExponentPart = e Exponent</div><div class="line">            or E Exponent</div><div class="line">Exponent = Digits</div><div class="line">        or + Digits</div><div class="line">        or - Digits</div><div class="line">Digits = Digit</div><div class="line">      or Digits Digit</div><div class="line">Digit = 0 through 9</div><div class="line">OneToNine = 1 through 9</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="与JavaScript的区别"><a href="#与JavaScript的区别" class="headerlink" title="与JavaScript的区别"></a>与JavaScript的区别</h3><hr>
+<ul>
+<li>属性名必须为双引号包裹的字符串，逗号后面为空是不合法的</li>
+<li>JSONNumber不能以0开头且小数点后面至少跟一位数字</li>
+<li>可以正切解析Unicode line separator (U+2028) and paragraph separator (U+2029) characters，JavaScript中是无法解析的</li>
+</ul>
+<h3 id="JSON-parse-text-reviver"><a href="#JSON-parse-text-reviver" class="headerlink" title="JSON.parse(text[, reviver]):"></a>JSON.parse(text[, reviver]):</h3><hr>
+<p>将符合JSON格式的并用字符串包裹的JSON文本转换为JSON对象。<br>当指定函数时，默认两个参数分别为被解析对象的key/value值，最后一个key为””,return值为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var js=[&#123;&quot;a&quot;:1&#125;,&#123;&quot;b&quot;:2&#125;,&#123;&quot;c&quot;:3&#125;],</div><div class="line">mi = JSON.stringify(js),</div><div class="line">filter=[];</div><div class="line">var sss = JSON.parse(mi, function(k, v) &#123;</div><div class="line">  //console.log(k);</div><div class="line">  if (k!== &apos;b&apos; &amp;&amp; (typeof v)!=&quot;object&quot;) &#123; filter.push(v) &#125; // if topmost value, return it,</div><div class="line">  return v;               // else return v * 2.</div><div class="line">&#125;);</div><div class="line">console.log(filter);</div><div class="line">console.log(sss);</div></pre></td></tr></table></figure></p>
+<p>这里我们可以模拟一个后台传过来的json序列化数据用JSON.parse()解析并过滤出我们想要的值（这他么方法会不会出问题不知道。。。效率我也不知道，别问我。。。）；</p>
+<h3 id="JSON-stringify-value-replacer-space"><a href="#JSON-stringify-value-replacer-space" class="headerlink" title="JSON.stringify(value[, replacer[, space]]):"></a>JSON.stringify(value[, replacer[, space]]):</h3><hr>
+<p>stringify方法三个参数，第一个参数为被序列化的JavaScript值，第二个为一个函数或者一个数组，当第二个参数为null,时可以指定第三个字符串参数</p>
+<ul>
+<li><p>第二个参数为函数时</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">var foo = &#123;foundation: &quot;Mozilla&quot;,transport: &quot;&quot;, month: 7&#125;;</div><div class="line"></div><div class="line">JSON.stringify(foo, replacer); </div><div class="line"></div><div class="line">&gt;   当function中的return 值为一个string时，那么用该string替代当前遍历到的值:</div><div class="line">function replacer(key, value) &#123;</div><div class="line">  if (!value) &#123;</div><div class="line">    return &quot;message&quot;; //此时value为&quot;&quot;</div><div class="line">  &#125;</div><div class="line">  return value;</div><div class="line">&#125;</div><div class="line">结果为&apos;&#123;foundation: &quot;Mozilla&quot;,transport: &quot;message&quot;, month: 7&#125;&apos;</div><div class="line"></div><div class="line">&gt;   如上当function中的return值为一个number时，用该number替代当前遍历到的值</div><div class="line"></div><div class="line">&gt;   如上当function中的return值为一个boolean时，用该boolean替代当前遍历到的值</div><div class="line"></div><div class="line">&gt;   如上当function中的return值为一个object时，用该object替代当前遍历到的值，为function时当前遍历的键值对不显示</div><div class="line"></div><div class="line">&gt;   如上当function中的return值为一个undefined时，当前遍历到的键值对将不显示在返回的JSONString中。对数组进行序列化的情况下，此时的undefined会被null替换而非不显示。</div></pre></td></tr></table></figure>
+</li>
+<li><p>第二个参数为函数时</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">JSON.stringify(foo, [&apos;week&apos;, &apos;month&apos;]); </div><div class="line">//过滤出key为week和month的键值对</div></pre></td></tr></table></figure>
+</li>
+<li><p>当第二个参数为null,可以指定第三个字符串参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&gt;   第三个为空格时序列化之后的JOSNString为下面这样</div><div class="line">JSON.stringify(&#123; a: 2 &#125;, null, &apos; &apos;);</div><div class="line">&apos;&#123;</div><div class="line">&quot;a&quot;: 2</div><div class="line">&#125;&apos;</div><div class="line"></div><div class="line">&gt;   第三个为&quot;\t&quot;时序列化之后的JOSNString为下面这样</div><div class="line">&apos;&#123;</div><div class="line">    &quot;a&quot;: 2</div><div class="line">&#125;&apos;</div><div class="line"></div><div class="line">当然，联想下为&quot;\r&quot;等其他呢，自己去试试吧</div></pre></td></tr></table></figure>
+</li>
+<li><p>当被序列化的JavaScript值为一个object且包含一个key为”toJson”，value为一个function时，此时的序列化会受到该toJSON方法的影响</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">  foo: &apos;foo&apos;,</div><div class="line">  toJSON: function() &#123;</div><div class="line">    return &apos;bar&apos;;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">JSON.stringify(obj);        // &apos;&quot;bar&quot;&apos;</div><div class="line">JSON.stringify(&#123; x: obj &#125;); // &apos;&#123;&quot;x&quot;:&quot;bar&quot;&#125;&apos;</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/10/Expressions/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Expressions
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/15/collapse-margin/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">collapse-margin</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="JSON详解" data-title="JSON详解" data-url="http://yoursite.com/2016/04/20/JSON详解/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 发动机
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>ES6_Iteration protocols | 发动机的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ES6中新增了iterable protocol和iterator protocol，即可迭代协议和迭代器协议，前者规定JavaScript对象可以自定义本身被遍历时的行为，后者规定了作为一个迭代器应有的标准方法。（遍历和迭代意思差不多）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6_Iteration protocols">
+<meta property="og:url" content="http://yoursite.com/2016/05/19/ES6之Iteration-protocols/index.html">
+<meta property="og:site_name" content="发动机的博客">
+<meta property="og:description" content="ES6中新增了iterable protocol和iterator protocol，即可迭代协议和迭代器协议，前者规定JavaScript对象可以自定义本身被遍历时的行为，后者规定了作为一个迭代器应有的标准方法。（遍历和迭代意思差不多）">
+<meta property="og:updated_time" content="2016-05-19T09:01:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6_Iteration protocols">
+<meta name="twitter:description" content="ES6中新增了iterable protocol和iterator protocol，即可迭代协议和迭代器协议，前者规定JavaScript对象可以自定义本身被遍历时的行为，后者规定了作为一个迭代器应有的标准方法。（遍历和迭代意思差不多）">
+  
+    <link rel="alternative" href="/atom.xml" title="发动机的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.soideas.cn/uploads/allimg/111220/0J0114915-12.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">发动机</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/GodEngine" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/godengine" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="/godenginer@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/css/" style="font-size: 17.5px;">css</a> <a href="/tags/css3/" style="font-size: 20px;">css3</a> <a href="/tags/es6/" style="font-size: 12.5px;">es6</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/nieweidong/">东哥的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/Jiasm/">学霸的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我一个菜廖</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">发动机</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://www.soideas.cn/uploads/allimg/111220/0J0114915-12.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">发动机</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/GodEngine" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/godengine" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/godenginer@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-ES6之Iteration-protocols" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/19/ES6之Iteration-protocols/" class="article-date">
+  	<time datetime="2016-05-19T08:54:01.000Z" itemprop="datePublished">2016-05-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ES6_Iteration protocols
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/js/">javascript</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ES6中新增了iterable protocol和iterator protocol，即可迭代协议和<br>迭代器协议，前者规定JavaScript对象可以自定义本身被遍历时的行为，后者规定了作为一个迭代器应有的标准方法。（遍历和迭代意思差不多）<br><a id="more"></a></p>
+<h3 id="一、iterable-protocol-可迭代协议"><a href="#一、iterable-protocol-可迭代协议" class="headerlink" title="一、iterable protocol 可迭代协议"></a>一、iterable protocol 可迭代协议</h3><p>遵循了这个协议的JavaScript对象都可以称为<em>iterable objects</em>，即可迭代的对象，很多JavaScript内建对象都遵循了这个协议(包括Array,Map,Set,String,TypeArray,arguments，Generator实例等等)。那么<strong>怎么算遵循了这个协议呢？</strong></p>
+<blockquote>
+<p>只要实现了@@iterator方法，即只要对象本身或其原型链上有[Symbol.iterator]属性，该属性值为无参函数，且该函数返回一个遵循iterator protocol（下面会说明）的对象（iterator迭代器）。</p>
+</blockquote>
+<p>栗如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var str = &quot;abc&quot;，                //String遵循iterable protocol</div><div class="line">var array = [1,2,3];             //Array遵循iterable protocol</div><div class="line">typeof str[Symbol.iterator]      // 结果为function</div><div class="line">typeof array[Symbol.iterator]    //结果为function</div></pre></td></tr></table></figure></p>
+<p><strong>遵循了这个协议然后呢？</strong><br>遵循iterable protocol协议的对象在被迭代时(如被for…of，spread oprator扩展运算符，yield*操作时)，会调用其@@iterator方法，即调用obj[Symbol.iterator]方法，并返回一个iterator对象，当然该iterator对象遵循iterator protocol，下面会提到。</p>
+<h3 id="二、for…of"><a href="#二、for…of" class="headerlink" title="二、for…of"></a>二、for…of</h3><p>for…of语句用来循环迭代一个可被迭代的对象(<em>iterable objects</em>)，语法为</p>
+<blockquote>
+<p>for (variable of iterable) {statement}</p>
+</blockquote>
+<p>iterable即iterable objects，将该object的内的值遍历出来并复制给variable；<br>更多for…of的栗子请看<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of" target="_blank" rel="external">MDN大法好</a>。</p>
+<h3 id="三、iterator-protocol-迭代器协议"><a href="#三、iterator-protocol-迭代器协议" class="headerlink" title="三、iterator protocol 迭代器协议"></a>三、iterator protocol 迭代器协议</h3><p>遵循这个协议的对象都可以称为iterator，即迭代器。那么<strong>怎么算遵循了这个协议呢？</strong></p>
+<blockquote>
+<p>当对象实现了一个next()方法，且该方法满足以下条件。<br>该方法返回一个包含两个属性值的对象一个为done的boolean属性，true时表示 迭代至最后一个值，false表示非最后一个值，false等同于没有指定done属性；一个为value属性，可以为任何JavaScript值，在done属性为true时被忽略。</p>
+</blockquote>
+<p>栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">var str = &quot;abc&quot;;</div><div class="line">var iter = str[Symbol.iterator]();      //拿到String的迭代器</div><div class="line"></div><div class="line">iter.next();                //&#123;value:&quot;a&quot;,done:false&#125;</div><div class="line">iter.next();                //&#123;value:&quot;b&quot;,done:fasle&#125;</div><div class="line">iter.next();                //&#123;value:&quot;c&quot;,done:true&#125;</div><div class="line"></div><div class="line">for(var value of str)&#123;                 //for...of自动连续调用迭代器的next方法</div><div class="line">    consle.log(value);       //a,b,c</div><div class="line">&#125;</div><div class="line"></div><div class="line">1，客官可以把for..of中的str换成iter,发现结果仍一样...,说明撒？</div><div class="line">说明iter这个迭代器本身也遵循了iterable protocol协议，</div><div class="line"></div><div class="line">试试：</div><div class="line">typeof iter[Symbol,iterator]       //&quot;function&quot;</div><div class="line">2，我擦？再来看这个：</div><div class="line">iter[Symbol,iterator]===iter        //true</div><div class="line"></div><div class="line">原来String迭代器不仅遵循iterator protocol，也遵循iterable protocol，且其[Symbol.iterator]()方法返回的就是自己。</div><div class="line"></div><div class="line">返回第一个问题，为啥写成str和iter迭代结果一样呢？因为for...of会去拿str的迭代器，即iter，并调用iter的next方法，你写成iter，for...of找到就是它，所以结果一样。</div><div class="line"></div><div class="line">很多对象本身即遵循iterator protocol，也遵循iterable protocol，例如逼格稍高的Generator实例对象，理解本章对理解generator非常有益。</div><div class="line"></div><div class="line">3,调用iter的next()方法可以看到返回符合iterator protocol协议的值，value和done；</div></pre></td></tr></table></figure></p>
+<h3 id="四、自定义对象被迭代时的行为"><a href="#四、自定义对象被迭代时的行为" class="headerlink" title="四、自定义对象被迭代时的行为"></a>四、自定义对象被迭代时的行为</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">var someString = new String(&quot;abc&quot;);</div><div class="line"></div><div class="line">someString[Symbol.iterator] = function() &#123;</div><div class="line">  return &#123; </div><div class="line">    next: function() &#123;</div><div class="line">      if (this._first) &#123;</div><div class="line">        this._first = false;</div><div class="line">        return &#123; value: &quot;bye&quot;, done: false &#125;;</div><div class="line">      &#125; else &#123;</div><div class="line">        return &#123; done: true &#125;;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    _first: true</div><div class="line">  &#125;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">for(var value of someString)&#123;</div><div class="line">    console.log(value);                 //&quot;bye&quot;</div><div class="line">&#125;</div><div class="line"></div><div class="line">如上修改了someString的默认的[Symbol.iterator]方法，并且返回了一个迭代器对象，该迭代器对象指定了someString第一次返回&quot;bye&quot;,第二次被迭代时done为true，停止迭代。</div><div class="line"></div><div class="line">注意自定义的迭代器最好有结束迭代的设置，即要有done为true的情况，否则for...of会一直调用next()方法，直到遇见done为true才停止，没有的话就TM成死循环了。</div></pre></td></tr></table></figure>
+<p>更详细的内容请看<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols" target="_blank" rel="external">MDN</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/26/闭包/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          闭包
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/10/Expressions/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Expressions</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="ES6之Iteration-protocols" data-title="ES6_Iteration protocols" data-url="http://yoursite.com/2016/05/19/ES6之Iteration-protocols/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 发动机
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
